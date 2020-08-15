@@ -1,12 +1,16 @@
 {
     "name": "tfs/mpesa",
-    "description": "This package will enable you to consume Safaricom Mpesa Daraja API",
+    "description": "This package will enable you to consume Safaricom Mpesa Daraja API in your Laravel project",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
             "name": "Kelvin Maina",
             "email": "thiongokelvin5@gmail.com"
+        },
+        {
+            "name": "George Njoroge",
+            "email": "georgenjoroge977@gmail.com"
         }
     ],
     "minimum-stability": "dev",
