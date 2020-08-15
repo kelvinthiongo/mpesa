@@ -68,7 +68,7 @@ class Mpesa
 
     public static function query_request($CheckoutRequestID)
     {
-        $access_token = $this->get_access_token();
+        $access_token = Mpesa::get_access_token();
         $time = date('YmdHis');
         $shortcode = \Config::get("mpesa.".config('mpesa.mode').".shortcode");
         $passkey = \Config::get("mpesa.".config('mpesa.mode').".passkey");
