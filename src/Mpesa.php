@@ -19,7 +19,7 @@ class Mpesa
         return $access_token;
     }
 
-    public static function make_payment($phone, $amount, $AccountReference, $TransactionDesc)
+    public static function mpesa_express($phone, $amount, $AccountReference, $TransactionDesc)
     {
         $access_token = Mpesa::get_access_token();
 
@@ -27,8 +27,6 @@ class Mpesa
         $shortcode = \Config::get("mpesa.".config('mpesa.mode').".shortcode");
         $passkey = \Config::get("mpesa.".config('mpesa.mode').".passkey");
         $password = base64_encode($shortcode . $passkey . $time);
-        $phoneNumber = intval($phone);
-        $phoneNumber = '254' . $phoneNumber;
 
         if (config('mpesa.mode') == 'sandbox') {
             $AccountReference = 'KES. ' . $amount;
@@ -52,9 +50,9 @@ class Mpesa
             "Timestamp" => $time,
             "TransactionType" => "CustomerPayBillOnline",
             "Amount" => $amount,
-            "PartyA" => $phoneNumber,
+            "PartyA" => $phone,
             "PartyB" => $shortcode,
-            "PhoneNumber" => $phoneNumber,
+            "PhoneNumber" => $phone,
             "CallBackURL" => config('mpesa.callback_url'),
             "QueueTimeOutURL" => config('mpesa.callback_url'),
             "AccountReference" => $AccountReference,
