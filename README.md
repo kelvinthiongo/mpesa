@@ -48,5 +48,5 @@ $response = Mpesa::mpesa_express($phone, $amount, $AccountReference, $Transactio
 
 eg.
 
-$response = Mpesa::mpesa_express("254723077827", 1, "Account Desc", "TransactionDesc")
+$response = Mpesa::mpesa_express("254723077827", 1, "AccountReference", "TransactionDesc");
 ```
