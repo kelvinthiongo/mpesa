@@ -35,8 +35,6 @@ MPESA_MODE=sandbox
 
 ## Usage
 
-You can use the path constant to easily locate the binary in the PHP codebase: 
-
 #### Mpesa Express
 
 ``` php
