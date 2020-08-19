@@ -16,6 +16,7 @@ class Mpesa
         $response = \Http::retry(3, 100)->withBasicAuth($consumer_key, $consumer_secret)->get($token_url);
 
         $access_token = json_decode($response, true)['access_token'];
+
         return $access_token;
     }
 
@@ -61,7 +62,8 @@ class Mpesa
 
         $response = \Http::retry(3, 100)->withHeaders($headers)->post($stkpush_url, $data);
 
-        return json_decode($response, true);
+
+        return $response;
     }
 
     public static function query_request($CheckoutRequestID)
@@ -84,6 +86,6 @@ class Mpesa
             "CheckoutRequestID" => $CheckoutRequestID,
         ];
         $response = \Http::retry(3, 100)->withHeaders($headers)->post($query_url, $data);
-        json_decode($response, true);
+        return $response;
     }
 }

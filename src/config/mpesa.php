@@ -2,7 +2,7 @@
 
 return [
     'mode' => env('MPESA_MODE', 'live'), // Can only be 'sandbox' Or 'live'. If empty or invalid, 'live' will be used.
-    'callback_url' => env('MPESA_CALLBACK_URL', 'https://c0da8d587e6d.ngrok.io/api/promotions/handle-result'),
+    'callback_url' => env('MPESA_CALLBACK_URL', 'https://2476f61652df.ngrok.io/api/promotions/handle-result'),
     'sandbox' => [
         'consumer_key' => env('MPESA_SANDBOX_CONSUMER_KEY', 'FYe9UIYdUEnM0HVcyXrpayfkPWuaTKM5'),
         'consumer_secret' => env('MPESA_SANDBOX_CONSUMER_SECRET', 'Gchk1LsGGN5p3Ijh'),
