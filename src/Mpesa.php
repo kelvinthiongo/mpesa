@@ -2,7 +2,7 @@
 
 namespace TFS\Mpesa;
 
-use function GuzzleHttp\json_decode;
+// use function GuzzleHttp\json_decode;
 
 class Mpesa
 {
@@ -28,15 +28,6 @@ class Mpesa
         $shortcode = \Config::get("mpesa.".config('mpesa.mode').".shortcode");
         $passkey = \Config::get("mpesa.".config('mpesa.mode').".passkey");
         $password = base64_encode($shortcode . $passkey . $time);
-
-        if (config('mpesa.mode') == 'sandbox') {
-            $AccountReference = 'KES. ' . $amount;
-            $amount = 1;
-        } else {
-            $AccountReference = substr("Product promotion", 0, 12); // Maximum of 12 characters.
-        }
-
-        $amount = 1;
 
         $stkpush_url = \Config::get("mpesa.".config('mpesa.mode').".stkpush_url");
 
